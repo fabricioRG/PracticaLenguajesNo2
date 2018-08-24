@@ -48,7 +48,7 @@
 	padding: 20px;
 }
 
-.btnCargar {
+.buttonAnalizar {
 	border: none;
     color: white;
     padding: 6px 28px;
@@ -56,13 +56,22 @@
     cursor: pointer;
     background-color: #ff9800;
 }
-.btnCargar:hover {background: #e68a00;}
+.buttonAnalizar:hover {background: #e68a00;}
 
 ul li {
 	font-family: "Open Sans Light";
 	background-color: #fff3e6;
 	margin: 5px;
 	padding: 5px;
+}
+
+.editable {
+  width: 90%;
+  height: 200px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  overflow: auto;
+  border-left: 6px solid DodgerBlue;
 }
 
 #descripcion {

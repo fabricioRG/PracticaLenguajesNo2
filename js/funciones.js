@@ -12,6 +12,8 @@ var openFile = function(event) {
   reader.readAsText(input.files[0]);
 };
 
+const automata = new Automata();
+
 function analizarTexto(id){
   var texto = document.getElementById(id);
   var strAnalizar = texto.innerText;
@@ -20,7 +22,9 @@ function analizarTexto(id){
     strCadena = strAnalizar.split("\n");
     for (var i = 0; i < strCadena.length; i++) {
       if(eliminarEspacio(strCadena[i]) != ""){
-        alert(contadorLineas + ". " + strCadena[i]);
+        var cadena = strCadena[i].split(" ");
+        autonoma.analizar(cadena, contadorLineas);
+        /*alert(contadorLineas + ". " + strCadena[i]);*/
       }
       if(i == (strCadena.length - 1)){
         contadorLineas = 0;

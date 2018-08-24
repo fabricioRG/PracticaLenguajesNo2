@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Analizador</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="text/javascript" src="js/funciones.js"></script>
+		<link rel="shortcut icon" type="image/x-icon" href="linux.ico">
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<div class="imagenInicio">
+			<img title="Logotipo" src="img/logo.png" width="120" alt="Logotipo de la pagina">
+		</div>
+	</head>
+	<body class="cuerpo">
+		<h1 class="tituloPrincipal">Analizador Lexico</h1>
+		<p class="parrafo" id="contenidoAnalizador">
+			Un analizador léxico es el componente encargado de identificar los tokens válidos en un código de entrada y emitir errores de ser necesario, crearemos un analizador léxico basado en expresiones regulares capaz de detectar números, cadenas, comentarios, operadores, identificadores y palabras reservadas.<br><br>
+			El analizador léxico deberá informar de cada token encontrado, en que linea y columna exactamente fue extraído el token, ademas del indice del token, el tipo y el lexema que lo representa.
+
+		</p>
+		<hr/>
+		<br/>
+		<h2 class="subtitulo" id="descripcion">Descripción</h2>
+		<ul class="lista">
+			<li><strong>Carga de archivo de entrada:</strong><br>El usuario tiene la disponibilidad de cargar un archivo de entrada con el texto que desea analizar. El texto del archivo de texto debe ser cargado en un componente que permita su edición.</li><br>
+			<li><strong>Edición de texto de entrada:</strong><br>El usuario tiene la disponibilidad de crear texto de entrada en un componente para su análisis.</li><br>
+			<li><strong>Búsqueda de patrones:</strong><br>El usuario tiene la disponibilidad de indicar una palabra que será buscada dentro del texto de entrada y al presionar un botón una nueva área mostrará el texto de entrada resaltando el texto que coincida con la cadena buscada.</li><br>
+			<li><strong>Análisis de tokens:</strong><br>En este espacio aparezera una breve descripción de lo que consiste el analizador, una breve explicacion del procedimiento.</li><br>
+			<li><strong>Reporte de errores:</strong><br>Si existieran errores, se debe generar una tabla con la siguiente información:<ul><li>Símbolo o cadena de error</li><li>Posición (fila y columna dentro del texto de entrada)</li></ul></li><br>
+			<li><strong>Reporte de tokens:</strong><br>Este reporte se debe mostrar solo si no existen errores y genera una tabla de tokens en la cual se listan todos los lexemas con la siguiente información:<ul><li>Nombre del Token</li><li>Lexema</li><li>Posición</li></ul>El usuario también debe contar con la funcionalidad de recuento de lexemas, la cual se debe habilitar cuando no existan errores en el texto de entrada, y consta de una tabla con la siguiente información:<ul><li>Lexema</li><li>Cantidad de veces que aparece en el texto de entrada</li></ul></li><br>
+			<li><strong>Guardar cambios del texto de entrada:</strong><br>El usuario deberá tener la opción de exportar el texto de entrada en un archivo de texto.</li><br>
+		</ul>
+		<input class="cargarArchivo" name="archivo" type="file" size="20">
+		<button type="button" class="btnCargar" onclick="textoCargado('cargaTexto')">Cargar Archivo</button>
+		<form>
+			<br><textarea class="areaTexto" id="cargaTexto" placeholder="Area de texto..."></textarea>
+		</form>
+		<a target="_blank" href="Reportes.html">Reportes</a><br>
+		<hr>
+	</body>
+</html>

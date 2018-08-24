@@ -1,3 +1,5 @@
+var contadorLineas = 0;
+
 var openFile = function(event) {
   var input = event.target;
   var reader = new FileReader();
@@ -13,10 +15,24 @@ var openFile = function(event) {
 function analizarTexto(id){
   var texto = document.getElementById(id);
   var strAnalizar = texto.innerText;
-  if(strAnalizar != ""){
-    alert(strAnalizar);
+  var newString = strAnalizar.replace(/\s/g, "");
+  if(newString != ""){
+    strCadena = strAnalizar.split("\n");
+    for (var i = 0; i < strCadena.length; i++) {
+      if(eliminarEspacio(strCadena[i]) != ""){
+        alert(contadorLineas + ". " + strCadena[i]);
+      }
+      if(i == (strCadena.length - 1)){
+        contadorLineas = 0;
+      }
+    }
   } else {
     alert("No hay contenido cargado");
   }
 }
 
+function eliminarEspacio(str, i){
+  newString = str.replace(/\s/g, '');
+  contadorLineas++;
+  return newString;
+}

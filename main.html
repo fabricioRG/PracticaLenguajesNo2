@@ -15,7 +15,6 @@
 		<p class="parrafo" id="contenidoAnalizador">
 			Un analizador léxico es el componente encargado de identificar los tokens válidos en un código de entrada y emitir errores de ser necesario, crearemos un analizador léxico basado en expresiones regulares capaz de detectar números, cadenas, comentarios, operadores, identificadores y palabras reservadas.<br><br>
 			El analizador léxico deberá informar de cada token encontrado, en que linea y columna exactamente fue extraído el token, ademas del indice del token, el tipo y el lexema que lo representa.
-
 		</p>
 		<hr/>
 		<br/>
@@ -29,11 +28,11 @@
 			<li><strong>Reporte de tokens:</strong><br>Este reporte se debe mostrar solo si no existen errores y genera una tabla de tokens en la cual se listan todos los lexemas con la siguiente información:<ul><li>Nombre del Token</li><li>Lexema</li><li>Posición</li></ul>El usuario también debe contar con la funcionalidad de recuento de lexemas, la cual se debe habilitar cuando no existan errores en el texto de entrada, y consta de una tabla con la siguiente información:<ul><li>Lexema</li><li>Cantidad de veces que aparece en el texto de entrada</li></ul></li><br>
 			<li><strong>Guardar cambios del texto de entrada:</strong><br>El usuario deberá tener la opción de exportar el texto de entrada en un archivo de texto.</li><br>
 		</ul>
-		<input class="cargarArchivo" name="archivo" type="file" size="20">
-		<button type="button" class="btnCargar" onclick="textoCargado('cargaTexto')">Cargar Archivo</button>
+		<input class="cargarArchivo" id="file-input" type="file" accept="text/plain" onchange="openFile(event)" />
 		<form>
 			<br><textarea class="areaTexto" id="cargaTexto" placeholder="Area de texto..."></textarea>
 		</form>
+		<pre id="contenido-archivo"></pre>
 		<a target="_blank" href="Reportes.html">Reportes</a><br>
 		<hr>
 	</body>

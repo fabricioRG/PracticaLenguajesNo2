@@ -1,44 +1,58 @@
 const TERMINAL_IDENTIFICADOR = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-
 const TERMINAL_NUMERO = ['0','1','2','3','4','5','6','7','8','9'];
-
 const TERMINAL_PUNTUACION = ['.',',',';',':'];
-
 const TERMINAL_OPERADOR = ['+','-','*','/','%'];
-
 const TERMINAL_AGRUPACION =['(',')','[',']','{','}'];
+const TOKEN_SIN_DEFINIR = "Sin definir";
+const TOKEN_IDENTIFICADOR = "Identificador";
+const TOKEN_NUMERO = "Numero";
+const TOKEN_DECIMAL = "Decimal";
+const TOKEN_PUNTUACION = "Puntuacion";
+const TOKEN_OPERADOR = "Operador";
+const TOKEN_AGRUPACION = "Agrupacion";
 
 function compararCaracter(caracter){
-	var token = "Sin definnir";
+	var token = TOKEN_SIN_DEFINIR;
 	var tipoToken = 0;
-	if(esIdentificador(caracter[0]) == 1){
-		token = "Identificador";
+	if(comparar(caracter[0], TERMINAL_IDENTIFICADOR) == 1){
+		token = TOKEN_IDENTIFICADOR;
 		tipoToken = 1;
-	} else if(esNumero(caracter[0]) == 1){
-		token = "Numero";
+	} else if(comparar(caracter[0], TERMINAL_NUMERO) == 1){
+		token = TOKEN_NUMERO;
 		tipoToken = 2;
 	} else if(caracter.length == 1){
-		if((esSignoPuntuacion(caracter[0]) == 1)){
-			return "Puntuacion";
-		} else if(esOperador(caracter[0]) == 1){
-			return "Operador";
-		} else if(esAgrupacion(caracter[0]) == 1){
-			return "Agrupacion";
+		if((comparar(caracter[0], TERMINAL_PUNTUACION) == 1)){
+			return TOKEN_PUNTUACION;
+		} else if(comparar(caracter[0], TERMINAL_OPERADOR) == 1){
+			return TOKEN_OPERADOR;
+		} else if(comparar(caracter[0], TERMINAL_AGRUPACION) == 1){
+			return TOKEN_AGRUPACION;
+		} else {
+			return 0;
 		}
 	} else {
-		return token;
+		return 0;
 	}
+	var punto = 0;
 	for (var i = 0; i < caracter.length; i++) {
 		if(tipoToken == 0){
 			break;
 		} else if(tipoToken == 1){
-			if((esIdentificador(caracter[i]) == 0) && (esNumero(caracter[i]) == 0)){
-			token = "No Identificador";
+			if((comparar(caracter[i], TERMINAL_IDENTIFICADOR) == 0) && (comparar(caracter[i], TERMINAL_NUMERO) == 0)){
+			token = i;
 			break;
 			}
 		} else if(tipoToken == 2){
-			if(esNumero(caracter[i]) == 0){
-				token = "No Numero";
+			var comparacion = esNumero(caracter[i]);
+			if(comparacion == 2){
+				token = TOKEN_DECIMAL;
+				punto++;
+				if(punto > 1){
+				token = i;
+				break;
+				}
+			} else if(comparacion == 0){
+				token = i;
 				break;
 			}
 		}
@@ -57,57 +71,16 @@ function comparar(ctr, TERMINAL){
 	return estado;
 }
 
-function esIdentificador(ctr){
-	var estadoId = 0;
-	for (var i = 0; i < TERMINAL_IDENTIFICADOR.length; i++) {
-		if(ctr == TERMINAL_IDENTIFICADOR[i]){
-			estadoId = 1;
-			break;
-		}
-	}
-	return estadoId;
-}
-
 function esNumero(ctr){
-	var estadoNo = 0;
+	var estado = 0;
 	for (var i = 0; i < TERMINAL_NUMERO.length; i++) {
 		if(ctr == TERMINAL_NUMERO[i]){
-			estadoNo = 1;
+			estado = 1;
+			break;
+		} else if (ctr == TERMINAL_PUNTUACION[0]){
+			estado = 2;
 			break;
 		}
 	}
-	return estadoNo;
-}
-
-function esSignoPuntuacion(ctr){
-	var estadoPu = 0;
-	for (var i = 0; i < TERMINAL_PUNTUACION.length; i++) {
-		if(ctr == TERMINAL_PUNTUACION[i]){
-			estadoPu = 1;
-			break;
-		}
-	}
-	return estadoPu;
-}
-
-function esOperador(ctr){
-	var estadoOp = 0;
-	for (var i = 0; i < TERMINAL_OPERADOR.length; i++) {
-		if(ctr == TERMINAL_OPERADOR[i]){
-			estadoOp = 1;
-			break;
-		}
-	}
-	return estadoOp;
-}
-
-function esAgrupacion(ctr){
-	var estadoAg = 0;
-	for (var i = 0; i < TERMINAL_AGRUPACION.length; i++) {
-		if(ctr == TERMINAL_AGRUPACION[i]){
-			estadoAg = 1;
-			break;
-		}
-	}
-	return estadoAg;
+	return estado;
 }

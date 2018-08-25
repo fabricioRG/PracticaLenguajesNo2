@@ -12,18 +12,17 @@ var openFile = function(event) {
   reader.readAsText(input.files[0]);
 };
 
-const automata = new Automata();
 
 function analizarTexto(id){
-  var texto = document.getElementById(id);
-  var strAnalizar = texto.innerText;
-  var newString = strAnalizar.replace(/\s/g, "");
+  var textoDivEditable = document.getElementById(id);
+  var textoAnalizar = textoDivEditable.innerText;
+  var newString = textoAnalizar.replace(/\s/g, "");
   if(newString != ""){
-    strCadena = strAnalizar.split("\n");
+    strCadena = textoAnalizar.split("\n");
     for (var i = 0; i < strCadena.length; i++) {
       if(eliminarEspacio(strCadena[i]) != ""){
         var cadena = strCadena[i].split(" ");
-        autonoma.analizar(cadena, contadorLineas);
+        AUTOMATA.analizar(cadena, contadorLineas);
         /*alert(contadorLineas + ". " + strCadena[i]);*/
       }
       if(i == (strCadena.length - 1)){
@@ -40,3 +39,16 @@ function eliminarEspacio(str, i){
   contadorLineas++;
   return newString;
 }
+
+class Automata {
+
+  analizar(cadena, fila){
+    for (var i = 0; i < cadena.length; i++) {
+      var caracteres = cadena[i].split('');
+      alert("\"" + cadena[i] + "\"\n Token: " + compararCaracter(caracteres) + " | Fila: " + fila + " | Columna: " + (i + 1));
+    }
+  }
+}
+
+const AUTOMATA = new Automata();
+

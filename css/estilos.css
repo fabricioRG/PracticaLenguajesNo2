@@ -33,7 +33,27 @@
 }
 
 #subtituloErrores {
-	
+	width: 50%;
+	font-family: "Caviar Dreams";
+	font-style: normal;
+	font-size: 30px;
+	margin-top: 0px;
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+	color: #e60000;
+	border-bottom: 2px solid #e60000;
+}
+
+#subtituloTokens {
+	width: 50%;
+	font-family: "Caviar Dreams";
+	font-style: normal;
+	font-size: 30px;
+	margin-top: 0px;
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+	color: DodgerBlue;
+	border-bottom: 2px solid DodgerBlue;
 }
 
 .areaTexto {
@@ -88,7 +108,7 @@ ul li {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: DodgerBlue;
+    background-color: #e60000;
     color: white;
 }
 

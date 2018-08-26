@@ -30,6 +30,8 @@ function compararCaracter(caracter){
 		} else {
 			return 0;
 		}
+	} else if(caracter.length > 1){
+		return 1;
 	} else {
 		return 0;
 	}

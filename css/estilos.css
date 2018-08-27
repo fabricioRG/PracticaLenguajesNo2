@@ -32,6 +32,24 @@
 	text-align: center;
 }
 
+.highlight {
+	color: White;
+	background-color: #000066;
+}
+
+#subtituloB {
+	width: 50%;
+	font-family: "Caviar Dreams";
+	font-style: normal;
+	font-size: 30px;
+	margin-top: 0px;
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+	color: DodgerBlue;
+	border-bottom: 2px solid DodgerBlue;
+}
+
+
 #subtituloErrores {
 	width: 50%;
 	font-family: "Caviar Dreams";
@@ -42,6 +60,20 @@
 	text-align: center;
 	color: #e60000;
 	border-bottom: 2px solid #e60000;
+}
+
+#buscar {
+	width: 15%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 2px 10px 2px 10px;
+    text-align: left;
+    margin-left: 35%;
 }
 
 #subtituloTokens {
@@ -78,9 +110,20 @@
     padding: 6px 28px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #ff9800;
+    background-color: DodgerBlue;
 }
-.buttonAnalizar:hover {background: #e68a00;}
+.buttonAnalizar:hover {background: #007a99;}
+
+#buttonSearch {
+	border: none;
+    color: white;
+    padding: 6px 50px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: DodgerBlue;
+    margin-left: 20px;
+}
+#buttonSearch:hover {background: #007a99;}
 
 ul li {
 	font-family: "Open Sans Light";
@@ -104,12 +147,33 @@ ul li {
 
 #customers tr:hover {background-color: #ddd;}
 
-#customers th {
+#errores th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: #e60000;
     color: white;
+}
+
+#tokens th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: DodgerBlue;
+    color: white;
+}
+
+#recuento th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #00b300;
+    color: white;
+}
+
+#descripcion {
+	color: #ff6600;
+	border-bottom: 2px solid #ff6600;
 }
 
 .editable {
@@ -121,12 +185,25 @@ ul li {
   border-left: 6px solid DodgerBlue;
 }
 
-#descripcion {
-	color: #ff6600;
-	border-bottom: 2px solid #ff6600;
+#subtituloRecuentoTokens {
+	width: 50%;
+	font-family: "Caviar Dreams";
+	font-style: normal;
+	font-size: 30px;
+	margin-top: 0px;
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+	color: #00b300;
+	border-bottom: 2px solid #00b300;
 }
 
 #contenidoAnalizador {
 	background-color: #e6eeff;
 	border-left:6px solid DodgerBlue;
+}
+
+#textoSubrayado {
+	width: 50%;
+	background-color: #e6eeff;
+	border-left:6px solid DodgerBlue;		
 }

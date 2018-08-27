@@ -10,6 +10,8 @@ const TOKEN_DECIMAL = "Decimal";
 const TOKEN_PUNTUACION = "Puntuacion";
 const TOKEN_OPERADOR = "Operador";
 const TOKEN_AGRUPACION = "Agrupacion";
+const ABRIR_SPAN = '<span class="highlight">';
+const CERRAR_SPAN = '</span>';
 
 function compararCaracter(caracter){
 	var token = TOKEN_SIN_DEFINIR;
@@ -85,4 +87,16 @@ function esNumero(ctr){
 		}
 	}
 	return estado;
+}
+
+function compararCadenas(cadena, texto){
+	var cadenaActual = " ";
+	for (var i = 0; i < cadena.length; i++) {
+		if(texto == cadena[i]){
+			cadenaActual += ABRIR_SPAN + cadena[i] + CERRAR_SPAN + " ";
+		} else {
+			cadenaActual += cadena[i] + " ";
+		}
+	}
+	return cadenaActual;
 }

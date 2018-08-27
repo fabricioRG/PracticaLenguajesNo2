@@ -38,7 +38,7 @@
 }
 
 #subtituloB {
-	width: 50%;
+	width: 90%;
 	font-family: "Caviar Dreams";
 	font-style: normal;
 	font-size: 30px;
@@ -177,12 +177,13 @@ ul li {
 }
 
 .editable {
-  width: 90%;
-  height: 200px;
-  border: 1px solid #ccc;
-  padding: 5px;
-  overflow: auto;
-  border-left: 6px solid DodgerBlue;
+	font-family: "Open Sans Light";
+  	width: 90%;
+  	height: 200px;
+  	border: 1px solid #ccc;
+  	padding: 5px;
+  	overflow: auto;
+  	border-left: 6px solid DodgerBlue;
 }
 
 #subtituloRecuentoTokens {
@@ -203,7 +204,7 @@ ul li {
 }
 
 #textoSubrayado {
-	width: 50%;
+	width: 90%;
 	background-color: #e6eeff;
 	border-left:6px solid DodgerBlue;		
 }
